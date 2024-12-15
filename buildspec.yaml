@@ -2,4 +2,12 @@ version: 0.2
 phases:
   build:
     commands:
+      - echo "Test Code..."
+      - mvn test
+  post_build:
+    commands:
       - echo "Starting build..."
+      - mvn package
+artifacts:
+  files:
+    - targest/HelloWorld-1.0.jar
