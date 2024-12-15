@@ -22,13 +22,12 @@ phases:
       - sam --version
       - sam build --template-file template.yaml
       - sam package --template-file template.yaml --output-template-file packaged.yaml  
-      - sam deploy --template-file packaged.yaml --resolve-s3 s3://manesudesh-c-formation  --stack-name sam-stack-app-11 --no-confirm-changeset 
+     # - sam deploy --template-file packaged.yaml --resolve-s3 s3://manesudesh-c-formation  --stack-name sam-stack-app-11 --no-confirm-changeset 
   
   post_build:
     commands:
       - echo "Starting build..."
       - mvn package
-      - sam package --template-file template.yaml --output-template-file packaged.yaml 
 artifacts:
   files:
     - packaged.yaml 
