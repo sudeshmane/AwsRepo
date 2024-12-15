@@ -16,19 +16,20 @@ phases:
     commands:
       - sam --version
       - sam build --template-file template.yaml
-      - sam deploy --guided
+      - sam package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket s3://sudeshmane-cli
+      - sam deploy  --template-file template.yaml --s3-bucket s3://manesudesh-c-formation   --stack-name sam-stack-app-7
       
-  #build:
- #   commands:
-  #    - echo "Test Code..."
-   #   - mvn test
- # post_build:
-  #  commands:
-   #   - echo "Starting build..."
-    #  - mvn package
-     # - sam package --template-file template.yaml --output-template-file packaged.yaml 
-#artifacts:
- # files:
-  #  - '**/*.jar' 
-  #base-directory: target
-  #discard-paths: yes
+  build:
+    commands:
+      - echo "Test Code..."
+      - mvn test
+  post_build:
+    commands:
+      - echo "Starting build..."
+      - mvn package
+      - sam package --template-file template.yaml --output-template-file packaged.yaml 
+artifacts:
+  files:
+    - '**/*.jar' 
+  base-directory: target
+  discard-paths: yes
