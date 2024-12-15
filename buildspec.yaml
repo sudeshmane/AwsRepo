@@ -22,7 +22,7 @@ phases:
       - sam --version
       - sam build --template-file template.yaml
       - sam package --template-file template.yaml --output-template-file packaged.yaml  
-      - sam deploy --template-file packaged.yaml --resolve-s3 s3://manesudesh-c-formation  --stack-name sam-stack-app-10 --no-confirm-changeset 
+      - sam deploy --template-file packaged.yaml --resolve-s3 s3://manesudesh-c-formation  --stack-name sam-stack-app-11 --no-confirm-changeset 
   
   post_build:
     commands:
@@ -31,8 +31,8 @@ phases:
       - sam package --template-file template.yaml --output-template-file packaged.yaml 
 artifacts:
   files:
-    - '**/*.yaml' 
-  base-directory: target
+    - packaged.yaml 
+  #base-directory: target
   discard-paths: yes
 #secondary-artifacts:
  # secondary-artifact-1:
