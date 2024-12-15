@@ -1,9 +1,5 @@
 version: 0.2
-env:
-  variables:
-    AWS_ACCESS_KEY_ID: AKIAYHJANCWHV3BGPYCU
-    AWS_SECRET_ACCESS_KEY: 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
-    AWS_DEFAULT_REGION: us-east-1
+
 phases:
   install:
     runtime-versions:
