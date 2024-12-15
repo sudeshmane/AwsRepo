@@ -4,6 +4,7 @@ phases:
   install:
     runtime-versions:
       java: corretto11
+      python: 3.8
     commands:
       - yum update -y
       - yum install -y python3 python3-pip
