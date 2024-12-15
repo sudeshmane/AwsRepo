@@ -2,12 +2,8 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:     
-      python: 3.11
+    
     commands:
-      - yum clean all
-      - rm -f /var/lib/rpm/__db*
-      - rpm --rebuilddb
       - yum update -y
       - yum install -y python3 python3-pip
       - python3 -m pip install aws-sam-cli
