@@ -17,6 +17,7 @@ phases:
       - sam --version
       - sam build --template-file template.yaml
       - sam deploy --guided
+      
   #build:
  #   commands:
   #    - echo "Test Code..."
