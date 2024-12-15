@@ -29,6 +29,7 @@ phases:
       - echo "Starting build..."
       - mvn package
       
+      
 artifacts:
   files:
     - packaged.yaml 
