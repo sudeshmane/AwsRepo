@@ -38,7 +38,6 @@ Resources:
           Properties:
             Path: /hello
             Method: get
-
   
   LambdaExecutionRole:
     Type: 'AWS::IAM::Role'
