@@ -33,11 +33,11 @@ phases:
       - sam package --template-file template.yaml --output-template-file packaged.yaml 
 artifacts:
   files:
-    - '**/*.jar' 
+    - '**/*.yaml' 
   base-directory: target
   discard-paths: yes
-secondary-artifacts:
-  secondary-artifact-1:
-    files:
-      - '**/*packaged.yaml' 
-    name: another-artifact
+#secondary-artifacts:
+ # secondary-artifact-1:
+  #  files:
+   #   - '**/*packaged.yaml' 
+    #name: another-artifact
