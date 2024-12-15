@@ -8,6 +8,7 @@ phases:
     commands:
       - echo "Starting build..."
       - mvn package
+      - sam package --template-file template.yaml --output-template-file packaged.yaml 
 artifacts:
   files:
     - '**/*.jar' 
