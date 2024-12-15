@@ -4,8 +4,8 @@ phases:
     runtime-versions:
       java: corretto11
     commands:
-      - apt-get update
-      - apt-get install -y python3 python3-pip
+      - yum update -y
+      - yum install -y python3 python3-pip
       - python3 -m pip install aws-sam-cli
   build:
     commands:
