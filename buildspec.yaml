@@ -16,8 +16,8 @@ phases:
     commands:
       - sam --version
       - sam build --template-file template.yaml
-      - sam package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket s3://sudeshmane-cli
-      - sam deploy  --template-file template.yaml --s3-bucket s3://manesudesh-c-formation   --stack-name sam-stack-app-7
+      - sam package --template-file template.yaml --output-template-file packaged.yaml  --resolve-s3 s3://sudeshmane-cli
+      - sam deploy  --template-file template.yaml --resolve-s3 s3://manesudesh-c-formation  --stack-name sam-stack-app-7
       
   build:
     commands:
