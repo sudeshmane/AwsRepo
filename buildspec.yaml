@@ -15,7 +15,7 @@ phases:
   build:
     commands:
       - sam --version
-      - sam build
+      - sam build --template-file template.yaml
       - sam deploy --guided
   #build:
  #   commands:
