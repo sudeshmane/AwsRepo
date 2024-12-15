@@ -1,4 +1,9 @@
 version: 0.2
+env:
+  variables:
+    AWS_ACCESS_KEY_ID: AKIAYHJANCWHV3BGPYCU
+    AWS_SECRET_ACCESS_KEY: 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
+    AWS_DEFAULT_REGION: us-east-1
 phases:
   install:
     runtime-versions:
@@ -7,17 +12,25 @@ phases:
       - yum update -y
       - yum install -y python3 python3-pip
       - python3 -m pip install aws-sam-cli
+      - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+      - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+      - aws configure set default.region $AWS_DEFAULT_REGION
   build:
     commands:
-      - echo "Test Code..."
-      - mvn test
-  post_build:
-    commands:
-      - echo "Starting build..."
-      - mvn package
-      - sam package --template-file template.yaml --output-template-file packaged.yaml 
-artifacts:
-  files:
-    - '**/*.jar' 
-  base-directory: target
-  discard-paths: yes
+      - sam --version
+      - sam build
+      - sam deploy --guided
+  #build:
+ #   commands:
+  #    - echo "Test Code..."
+   #   - mvn test
+ # post_build:
+  #  commands:
+   #   - echo "Starting build..."
+    #  - mvn package
+     # - sam package --template-file template.yaml --output-template-file packaged.yaml 
+#artifacts:
+ # files:
+  #  - '**/*.jar' 
+  #base-directory: target
+  #discard-paths: yes
